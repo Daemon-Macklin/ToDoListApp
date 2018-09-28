@@ -1,5 +1,6 @@
 package sample;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
@@ -7,15 +8,15 @@ import java.util.Date;
 public class Activity {
     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
     private String Name;
-    private String dateStarted;
-    private String finishDate;
+    private LocalDate dateStarted;
+    private LocalDate finishDate;
     private String description;
     private Boolean isFinished;
 
-    public Activity(String name, String finishDate, String description){
+    public Activity(String name, LocalDate finishDate, String description){
         this.setName(name);
-        LocalDateTime now = LocalDateTime.now();
-        this.setDateStarted(dtf.format(now));
+        LocalDate now = LocalDate.now();
+        this.setDateStarted(now);
         this.setFinishDate(finishDate);
         this.setDescription(description);
         this.setFinished(false);
@@ -29,19 +30,19 @@ public class Activity {
         this.description = description;
     }
 
-    public String getFinishDate() {
+    public LocalDate getFinishDate() {
         return finishDate;
     }
 
-    public void setFinishDate(String finishDate) {
+    public void setFinishDate(LocalDate finishDate) {
         this.finishDate = finishDate;
     }
 
-    public String getDateStarted() {
+    public LocalDate getDateStarted() {
         return dateStarted;
     }
 
-    public void setDateStarted(String dateStarted) {
+    public void setDateStarted(LocalDate dateStarted) {
         this.dateStarted = dateStarted;
     }
 

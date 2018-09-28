@@ -2,7 +2,7 @@
 A small To-Do application that will allow users to keep on track of their lives. 
 Hello Red Hat!
 
-##Background
+## Background
 I will be developing this app in Java as it is what I feel most comfortable with. It is 
 planned to be a JavaFX application.
 

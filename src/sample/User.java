@@ -15,6 +15,7 @@ public class User {
     public User(String name, String password){
         this.setName(name);
         this.setPassword(password);
+        this.ToDoList = new ArrayList<>();
     }
 
     public String getName() {

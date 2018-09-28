@@ -1,0 +1,9 @@
+<object-stream>
+  <list>
+    <sample.User>
+      <name>Daemon</name>
+      <password>daemon</password>
+      <ToDoList/>
+    </sample.User>
+  </list>
+</object-stream>

@@ -10,6 +10,7 @@ public class Activity {
     private String dateStarted;
     private String finishDate;
     private String description;
+    private Boolean isFinished;
 
     public Activity(String name, String finishDate, String description){
         this.setName(name);
@@ -17,6 +18,7 @@ public class Activity {
         this.setDateStarted(dtf.format(now));
         this.setFinishDate(finishDate);
         this.setDescription(description);
+        this.setFinished(false);
     }
 
     public String getDescription() {
@@ -49,5 +51,13 @@ public class Activity {
 
     public void setName(String name) {
         Name = name;
+    }
+
+    public Boolean getFinished() {
+        return isFinished;
+    }
+
+    public void setFinished(Boolean finished) {
+        isFinished = finished;
     }
 }

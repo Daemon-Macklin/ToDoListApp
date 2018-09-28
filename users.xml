@@ -5,5 +5,15 @@
       <password>daemon</password>
       <ToDoList/>
     </sample.User>
+    <sample.User>
+      <name>Jason</name>
+      <password>jason</password>
+      <ToDoList/>
+    </sample.User>
+    <sample.User>
+      <name>Niall</name>
+      <password>niall</password>
+      <ToDoList/>
+    </sample.User>
   </list>
 </object-stream>

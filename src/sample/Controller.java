@@ -1,17 +1,18 @@
+/*
+ * @Author Daemon Macklin
+ * Controller class
+ * Where all of the main functions and features
+ * are handled
+ */
 package sample;
 
 import com.thoughtworks.xstream.io.xml.DomDriver;
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventTarget;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import com.thoughtworks.xstream.XStream;
-import javafx.scene.input.ContextMenuEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 
 import java.io.FileReader;
@@ -20,6 +21,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 
 public class Controller {
@@ -98,15 +100,13 @@ public class Controller {
             if(users.get(i).getName().equals(name)){
                 if(users.get(i).getPassword().equals(password)){
                     currentUser = users.get(i);
-                    System.out.println("Login Successful");
                     clearDisplay();
                     displayData();
                 }else{
-                    System.out.println("Password Incorrect");
+                    UserInfo.setText("Password or Name incorrect");
                 }
             }
         }
-            System.out.println("User not found");
     }
 
     /**

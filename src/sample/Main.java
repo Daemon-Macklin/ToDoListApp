@@ -1,3 +1,8 @@
+/*
+ * @Author Daemon Macklin
+ * Main class for Application
+ * Starts up JavaFX
+ */
 package sample;
 
 import javafx.application.Application;
@@ -11,7 +16,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("What Next");
         primaryStage.setScene(new Scene(root, 610, 530.0));
         primaryStage.show();
     }

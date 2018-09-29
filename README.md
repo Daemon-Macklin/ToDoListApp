@@ -60,4 +60,7 @@ the Users to do list and also ensure other users don't have access to another us
 to do list. The only way to access a users data is to be signed in, or by manually
 reading the XML file.   
 
+## JUnit Testing
+JUnit 4.12 is used to test the integrity of the setters and getters of the User and
+Activity Classes.  
 

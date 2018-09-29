@@ -141,17 +141,19 @@ public class Controller {
      * Method used to add a task
      * @param actionEvent
      */
-    public void addTask(ActionEvent actionEvent){
-        String name = activityNameText.getText();
-        String description = descriptionText.getText();
-        LocalDate finish = finishDateText.getValue();
-        Activity newActivity = new Activity(name, finish, description);
-        currentUser.getToDoList().add(newActivity);
-        saveUserData();
-        activityNameText.setText("");
-        finishDateText.setChronology(null);
-        descriptionText.setText("");
-        displayAcivities();
+    public void addTask(ActionEvent actionEvent) {
+        if (currentUser != null) {
+            String name = activityNameText.getText();
+            String description = descriptionText.getText();
+            LocalDate finish = finishDateText.getValue();
+            Activity newActivity = new Activity(name, finish, description);
+            currentUser.getToDoList().add(newActivity);
+            saveUserData();
+            activityNameText.setText("");
+            finishDateText.setChronology(null);
+            descriptionText.setText("");
+            displayAcivities();
+        }
     }
 
     /**
@@ -171,18 +173,20 @@ public class Controller {
      * @param actionEvent
      */
     public void viewActivity(ActionEvent actionEvent) {
-        String name = todoList.getValue().toString();
-        Activity activity = findActivityByName(name);
-        if(activity != null){
-            activityNameDisplay.setText("Name: "+activity.getName());
-            DescriptionDisplay.setText("Description: "+activity.getDescription());
-            StartDateDisplay.setText("Start Date: "+activity.getDateStarted().toString());
-            FinishDateDisplay.setText("Finsh Date: "+activity.getFinishDate().toString());
-            String str = "In Progress";
-            if(activity.getFinished()){
-                str = "Finished";
+        if(currentUser!= null) {
+            String name = todoList.getValue().toString();
+            Activity activity = findActivityByName(name);
+            if (activity != null) {
+                activityNameDisplay.setText("Name: " + activity.getName());
+                DescriptionDisplay.setText("Description: " + activity.getDescription());
+                StartDateDisplay.setText("Start Date: " + activity.getDateStarted().toString());
+                FinishDateDisplay.setText("Finsh Date: " + activity.getFinishDate().toString());
+                String str = "In Progress";
+                if (activity.getFinished()) {
+                    str = "Finished";
+                }
+                finishedDisplay.setText("Status: " + str);
             }
-            finishedDisplay.setText("Status: " + str);
         }
     }
 
@@ -206,12 +210,14 @@ public class Controller {
      * @param actionEvent
      */
     public void setAsDone(ActionEvent actionEvent) {
-        String name = todoList.getValue().toString();
-        Activity activity = findActivityByName(name);
-        activity.setFinished(true);
-        finishedDisplay.setText("Status: Finished");
-        saveUserData();
-        displayData();
+        if (currentUser != null) {
+            String name = todoList.getValue().toString();
+            Activity activity = findActivityByName(name);
+            activity.setFinished(true);
+            finishedDisplay.setText("Status: Finished");
+            saveUserData();
+            displayData();
+        }
     }
 
     /**
@@ -219,18 +225,20 @@ public class Controller {
      * @param actionEvent
      */
     public void removeActivity(ActionEvent actionEvent) {
-        String name = todoList.getValue().toString();
-        Activity activity = findActivityByName(name);
-        for(int i = 0; i < currentUser.getToDoList().size(); i+=1){
-            if(currentUser.getToDoList().get(i).equals(activity)){
-                currentUser.getToDoList().remove(i);
-                break;
+        if(currentUser != null ){
+                String name = todoList.getValue().toString();
+                Activity activity = findActivityByName(name);
+                for (int i = 0; i < currentUser.getToDoList().size(); i += 1) {
+                    if (currentUser.getToDoList().get(i).equals(activity)) {
+                        currentUser.getToDoList().remove(i);
+                        break;
+                    }
+                }
+                saveUserData();
+                clearDisplay();
+                displayData();
             }
         }
-        saveUserData();
-        clearDisplay();
-        displayData();
-    }
 
     /**
      * Method to log users out

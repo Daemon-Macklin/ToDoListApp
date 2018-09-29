@@ -81,7 +81,8 @@ public class Controller {
             return users;
         }catch (Exception e){
             System.out.println("Error Loading Data" + e);
-            return null;
+            ArrayList<User> users = new ArrayList<>();
+            return users;
         }
     }
 
@@ -237,6 +238,8 @@ public class Controller {
      */
     public void logOut(ActionEvent actionEvent) {
         currentUser = null;
+        nameText.setText("");
+        passwordText.setText("");
         displayData();
     }
 }

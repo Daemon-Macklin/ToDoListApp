@@ -1,5 +1,5 @@
-# ToDoListApp
-A small To-Do application that will allow users to keep on track of their lives. 
+# What Next?
+ What next is a small To-Do application that will allow users to keep on track of their lives. 
 Hello Red Hat!
 
 ## Background
@@ -9,6 +9,14 @@ RESTful but I believe a CRUD application will demonstrate the same
 concepts and fundamentals. It is planned to be a JavaFX application. 
 It is simple to use, just log in or sign up and view your to do list 
 and the different activities on it, Or add new ones.
+
+## Running the Application
+The application has been exported to a .jar file. To run the application you must have
+Java installed and ensure both WhatNext.jar and xstream-1.4.10.jar are in the same
+directory. Then simply run the WhatNext.jar file by clicking on it or running the command:
+```console
+User@RedHat:~$ java -jar WhatNext.jar
+```
 
 ## Storing Data
 I shall be using XML to store the User data. The user data includes a name and password,

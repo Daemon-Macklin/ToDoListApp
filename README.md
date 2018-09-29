@@ -28,18 +28,18 @@ description and the start and finish date.
 
 ## Authentication 
 For my project I am using a simple method for user authentication. My method is not
-secure as the passwords are saved in plain text in the xml file. But this functionality
+secure as the passwords are saved in plain text in the xml file. But the functionality
 of having multiple users is still there.
 
 ## JavaFX
-I decided to use JavaFx as the GUI cause  but I felt that JavaFX would be a good way to 
-showcase my abilaties.
+I decided to use JavaFx as the GUI because it is the simplest way to have an
+atheistically pleasing user interface in a Java application. 
  
 ## Adding new Activities
 By imputing the relevant information into the text boxes under Add activity and pressing
 the add Task button, the information will be taken from the text boxes and used to 
 create a new Activity object which is added to an arraylist used to represent the to do
-list stored in the User object. 
+list stored in the users User object. 
 
 ## Viewing Activities
 When signed in, clicking on the drop down menu will allow you to select any one of the 

@@ -14,15 +14,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import com.thoughtworks.xstream.XStream;
 import javafx.scene.text.Text;
-
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
 
 public class Controller {
 
